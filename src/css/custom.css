@@ -1,0 +1,277 @@
+/**
+ * ChainBounty — Custom Docusaurus Theme
+ * Palette: deep navy + violet/purple accent + emerald success states
+ */
+
+/* ─── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  /* Brand */
+  --cb-violet: #7c3aed;
+  --cb-violet-light: #a78bfa;
+  --cb-violet-dark: #5b21b6;
+  --cb-emerald: #10b981;
+  --cb-emerald-light: #34d399;
+  --cb-navy: #0f0e17;
+  --cb-navy-mid: #1a1a2e;
+  --cb-navy-card: #16213e;
+
+  /* Docusaurus overrides — light */
+  --ifm-color-primary: #7c3aed;
+  --ifm-color-primary-dark: #6d28d9;
+  --ifm-color-primary-darker: #5b21b6;
+  --ifm-color-primary-darkest: #4c1d95;
+  --ifm-color-primary-light: #8b5cf6;
+  --ifm-color-primary-lighter: #a78bfa;
+  --ifm-color-primary-lightest: #c4b5fd;
+
+  --ifm-font-family-base: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --ifm-code-font-size: 90%;
+  --ifm-heading-font-weight: 700;
+  --ifm-navbar-height: 60px;
+  --ifm-border-radius: 8px;
+
+  --docusaurus-highlighted-code-line-bg: rgba(124, 58, 237, 0.15);
+}
+
+/* ─── Dark mode overrides ────────────────────────────────────────────── */
+[data-theme='dark'] {
+  --ifm-color-primary: #a78bfa;
+  --ifm-color-primary-dark: #8b5cf6;
+  --ifm-color-primary-darker: #7c3aed;
+  --ifm-color-primary-darkest: #6d28d9;
+  --ifm-color-primary-light: #c4b5fd;
+  --ifm-color-primary-lighter: #ddd6fe;
+  --ifm-color-primary-lightest: #ede9fe;
+
+  --ifm-background-color: #0f0e17;
+  --ifm-background-surface-color: #1a1a2e;
+  --ifm-navbar-background-color: #0f0e17;
+  --ifm-footer-background-color: #0a0a14;
+  --ifm-toc-border-color: #2d2d4e;
+  --ifm-color-content: #e2e8f0;
+  --ifm-color-content-secondary: #94a3b8;
+  --ifm-heading-color: #f1f5f9;
+
+  --docusaurus-highlighted-code-line-bg: rgba(167, 139, 250, 0.15);
+}
+
+/* ─── Navbar ─────────────────────────────────────────────────────────── */
+.navbar {
+  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: rgba(15, 14, 23, 0.95);
+}
+
+.navbar__title {
+  font-weight: 800;
+  font-size: 1.15rem;
+  background: linear-gradient(135deg, #a78bfa 0%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* "Launch App" button in navbar */
+.navbar__item.navbar__link[href*="app.chainbounty"] {
+  background: var(--cb-violet);
+  color: #fff !important;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.navbar__item.navbar__link[href*="app.chainbounty"]:hover {
+  background: var(--cb-violet-dark);
+}
+
+/* ─── Announcement bar ───────────────────────────────────────────────── */
+div[class*='announcementBar'] {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ─── Sidebar ────────────────────────────────────────────────────────── */
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: var(--cb-navy-mid);
+  border-right: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.menu__link--active {
+  font-weight: 600;
+  border-left: 3px solid var(--cb-violet-light);
+  padding-left: 12px;
+}
+
+/* ─── Content area ───────────────────────────────────────────────────── */
+.markdown h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown h2 {
+  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+  padding-bottom: 0.4rem;
+  margin-top: 2rem;
+}
+
+/* ─── Admonitions ────────────────────────────────────────────────────── */
+[data-theme='dark'] .alert--info {
+  background-color: rgba(124, 58, 237, 0.1);
+  border-left-color: var(--cb-violet);
+}
+
+[data-theme='dark'] .alert--success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-left-color: var(--cb-emerald);
+}
+
+[data-theme='dark'] .alert--warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left-color: #f59e0b;
+}
+
+[data-theme='dark'] .alert--danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left-color: #ef4444;
+}
+
+/* ─── Code blocks ────────────────────────────────────────────────────── */
+[data-theme='dark'] pre {
+  background-color: #12121f !important;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 8px;
+}
+
+code {
+  border-radius: 4px;
+}
+
+[data-theme='dark'] code:not([class*='codeBlock']) {
+  background-color: rgba(124, 58, 237, 0.15);
+  color: #c4b5fd;
+  padding: 2px 6px;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.footer__title {
+  color: var(--cb-violet-light) !important;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ─── Homepage ───────────────────────────────────────────────────────── */
+.hero--primary {
+  background: linear-gradient(135deg, #0f0e17 0%, #1a1a2e 50%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero--primary::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #a78bfa 0%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero__subtitle {
+  color: #94a3b8;
+  font-size: 1.2rem;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.button--primary {
+  background: var(--cb-violet) !important;
+  border-color: var(--cb-violet) !important;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.button--primary:hover {
+  background: var(--cb-violet-dark) !important;
+  border-color: var(--cb-violet-dark) !important;
+  transform: translateY(-1px);
+}
+
+.button--secondary {
+  border-color: rgba(167, 139, 250, 0.5) !important;
+  color: #a78bfa !important;
+  font-weight: 600;
+}
+
+.button--secondary:hover {
+  border-color: var(--cb-violet-light) !important;
+  background: rgba(124, 58, 237, 0.1) !important;
+}
+
+/* ─── Feature cards ──────────────────────────────────────────────────── */
+.featureCard {
+  background: var(--cb-navy-card);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.featureCard:hover {
+  border-color: var(--cb-violet-light);
+  transform: translateY(-2px);
+}
+
+/* ─── Pagination ─────────────────────────────────────────────────────── */
+[data-theme='dark'] .pagination-nav__link {
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  border-color: var(--cb-violet-light);
+}
+
+/* ─── TOC ────────────────────────────────────────────────────────────── */
+.table-of-contents__link--active {
+  color: var(--cb-violet-light) !important;
+  font-weight: 600;
+}
+
+/* ─── Scrollbar (WebKit) ─────────────────────────────────────────────── */
+[data-theme='dark'] ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: var(--cb-navy);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.4);
+  border-radius: 3px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: var(--cb-violet);
+}
