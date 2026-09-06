@@ -11,7 +11,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://chainbounty.dev',
+  url: 'https://docs.chainbounty.dev',
   baseUrl: '/',
 
   organizationName: 'chainbounty',
@@ -19,6 +19,19 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+
+  // Enable sitemap generation
+  plugins: [
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        changefreq: 'weekly',
+        priority: 0.5,
+        ignorePatterns: ['/tags/**'],
+        filename: 'sitemap.xml',
+      },
+    ],
+  ],
 
   i18n: {
     defaultLocale: 'en',

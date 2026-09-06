@@ -1,0 +1,8 @@
+.docusaurus
+node_modules
+.cache
+.vscode
+.git
+.env
+.env.local
+*.log
